@@ -9,7 +9,7 @@ import scrapy
 
 
 class answerItem(scrapy.Item):
-    # define the fields for your item here like:
+    table_name = scrapy.Field()
     question_id=scrapy.Field()#问题编号
     content = scrapy.Field()#评论
     created_time = scrapy.Field()#创建（发布）时间
@@ -21,6 +21,7 @@ class answerItem(scrapy.Item):
     url=scrapy.Field()
 
 class userItem(scrapy.Item):
+    table_name=scrapy.Field()
     avatar_url_template = scrapy.Field()
     badge = scrapy.Field()
     type = scrapy.Field()
@@ -38,10 +39,13 @@ class userItem(scrapy.Item):
 
 
 class questionItem(scrapy.Item):
-    question_type=scrapy.Field()
+    table_name = scrapy.Field()
+    id=scrapy.Field()
     title = scrapy.Field()
     url = scrapy.Field()
-    created = scrapy.Field()
-    type = scrapy.Field()
-    id = scrapy.Field()
-    updated_time = scrapy.Field()
+    keywords=scrapy.Field()
+    answerCount=scrapy.Field()
+    commentCount=scrapy.Field()
+    dateCreated=scrapy.Field()
+    dateModified=scrapy.Field()
+    followerCount=scrapy.Field()
